@@ -1,0 +1,96 @@
+.xInp{
+   border: 1px solid #eae600
+}
+
+/* CSStransition 组件动画 */
+
+.boss-text-enter{
+    opacity: 0;
+}
+.boss-text-enter-active{
+    opacity: 1;
+    transition: opacity 2000ms;
+
+}
+.boss-text-enter-done{
+    opacity: 1;
+}
+.boss-text-exit{
+    opacity: 1;
+}
+.boss-text-exit-active{
+    opacity: 0;
+    transition: opacity 2000ms;
+
+}
+.boss-text-exit-done{
+    opacity: 0;
+}
+
+
+.test-box-enter{
+    opacity: 0;
+}
+.test-box-enter-active{
+    opacity: 1;
+    transition: opacity 2000ms;
+}
+.test-box-enter-done{
+    opacity: 1
+}
+.test-box-exit{
+    opacity: 1;
+}
+.test-box-exit-active{
+    opacity: 0;
+    transition: opacity 2000ms;
+
+}
+.test-box-exit-done{
+    opacity: 0;
+}
+
+/* 直接动画 */
+/* .hide{
+    opacity: 0; transition: all 1s ease-in;
+}
+.show{
+    opacity: 1; transition: all 1s ease-in;
+} */
+
+
+/* 关键帧动画 */
+
+.hide{
+    animation: hide-item 1.5s ease-in forwards;
+}
+
+.show{
+    animation: shown-item 1.5s ease-in forwards;
+}
+@keyframes hide-item{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+        color:red;
+    }
+    100%{
+        opacity: 0;
+        color: black;
+    }
+}
+@keyframes shown-item{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+        color: blue ;
+    }
+    100%{
+        opacity: 1;
+        color: black;
+    }
+}

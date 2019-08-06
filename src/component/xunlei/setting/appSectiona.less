@@ -1,0 +1,85 @@
+@import "global";
+
+.layout{
+  .layo(#2558ff);
+  color: white;
+}
+.global{
+  position: relative;
+  min-height: 560px;
+}
+
+.left{
+  position: absolute;
+  background: #1890ff;
+  width: 800px;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.right{
+  position: absolute;
+  background: #DEC811;
+  width: 686px;
+  height: 100%;
+  top:0;
+  right: 0;
+  overflow: hidden;
+}
+.L_liDiv{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #27ffc0;
+  margin: 10px;
+  animation-duration: 3s;
+  animation-name: L_liDiv;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes L_liDiv {
+  from{
+    top: 0;
+  }
+  50%{
+    top: 20px;
+  }
+  to{
+    top: 0;
+  }
+}
+
+
+.R_liDiv{
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s ease;
+  right: -80%;
+  //transition-delay: 0.3s;
+  //-webkit-transition-delay: 0.5s;
+
+}
+.active{
+  opacity: 1;
+  right: 0;
+  -webkit-transition-delay: 0.5s;
+}
+
+.li1{
+  left: 32.5%;
+  top: 17%;
+  animation-delay: 0.7s;
+}
+.li2{
+  left: 23%;
+  top: 47%;
+  animation-delay: 0.2s;
+}
+.li3{
+  left: 64%;
+  top: 17%;
+  animation-delay: 0.5s;
+}

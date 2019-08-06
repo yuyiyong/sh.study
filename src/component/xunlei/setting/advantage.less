@@ -1,0 +1,33 @@
+@import "global";
+
+.layout{
+  .layo(#f6fafe)
+}
+.ulDiv{
+ // display: inline-block;
+  min-width: 600px;
+  position: relative;
+  //box-shadow: 0 10px 30px 0 rgba(18, 154, 231, 0.12);
+}
+.ulDiv li{
+
+  /*&:active {
+    background-color: yellow;
+  }*/
+}
+.liDiv{
+  display: inline-block;
+  min-width: 16.66667%;
+  height: 390px;
+  background: #fff;
+  box-shadow: 0 10px 30px 0 rgba(18, 154, 231, 0.12);
+  transition: all 0.4s ease-in;
+  &:hover {
+    min-width: 400px;
+  }
+  //background: linear-gradient(90deg, #05D7F5 0%, #334CF3 100%);
+}
+.active {
+  min-width: 400px;
+  background: #00aaef;
+}

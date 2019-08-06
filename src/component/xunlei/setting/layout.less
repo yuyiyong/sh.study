@@ -1,0 +1,44 @@
+@fix:fixed;
+@absolute:absolute;
+.pos(){
+  position: @absolute;
+}
+
+.header{
+  height: 62.4px;
+  background: rgba(0, 0, 0, 0.7);
+  //.pos();
+  width: 100%;
+  z-index: 999;
+  display: flex;
+}
+
+.footer{
+  min-height: 100px;
+  background: #634000;
+}
+.contenter{
+  min-height: 600px;
+  padding-top:62.4px ;
+  //background: #8cc8ff;
+  //text-align: ;<div style={{textAlign:'center',width:'100%'}}>
+  //margin
+}
+
+.left{
+  width: 76px;
+  height: 261px;
+  background: white;
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  transition: all 0.3s ease-in;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bb{
+  height: 84px;
+  width: 76px;
+  border-bottom: 1px solid #E5E5E5;
+  font-size: 14px;
+}
