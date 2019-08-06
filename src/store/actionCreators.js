@@ -32,7 +32,8 @@ export const getTodoList = () => {
 };
 
 //中间件sage\别的步骤都一样.
+/*
 export const getMyListAction = () => ({
     type: GET_MY_LIST,
 
-});
+});*/
