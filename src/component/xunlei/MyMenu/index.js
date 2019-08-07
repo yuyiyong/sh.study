@@ -23,7 +23,7 @@ class MyMenu extends Component {
   render() {
     const {active} = this.props;
     //console.log("active:", active);
-    console.log("this.state.activeKey", this.state.activeKey);
+   // console.log("this.state.activeKey", this.state.activeKey);
     //主菜单下划线
     let styleStr = '';
     //字体颜色
@@ -69,7 +69,6 @@ class MyMenu extends Component {
   buildUl = ({key, styleStr, fontStr, item, bgStr}) => {
     //this.getOffsetLeft();
     const left = this.state.left;
-    console.log("left...", left);
     return <li
       key={key}
       onClick={() => this.handle(key)}
@@ -97,7 +96,6 @@ class MyMenu extends Component {
         item.child.map((itemChild, id) => {
           bgStr = parseInt(this.state.activeKey) === key && parseInt(this.state.activeId) === id ? '#e6f7ff' : '';
           fontStr1 = parseInt(this.state.activeKey) === key && parseInt(this.state.activeId) === id ? 'rgba(24, 144, 255, 1)  ' : '';
-          console.log("itemChild", itemChild);
           if (itemChild.AUrl) {
             return <a href={itemChild.AUrl} target="view_frame" key={key + 'ab'}>
               {this.liOnClickItem(key, id, fontStr1, itemChild, bgStr)}
@@ -149,13 +147,13 @@ class MyMenu extends Component {
 //子目录的li
 
   handle = (key) => {
-    console.log("show key:", key);
+    //console.log("show key:", key);
     this.setState({
       activeKey: key
     })
   }
   handleZ = (key, id) => {
-    console.log("key,id", key, id);
+    //console.log("key,id", key, id);
     this.setState({
       activeKey: key,
       activeId: id,

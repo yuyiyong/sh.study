@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-//import "antd/dist/antd.css"
-import {Button, Input, List} from "antd";
 import store from "../../store";
 import {addItemAction, changeInputAction, delItemAction} from "../../store/actionCreators";
-import TodoListUI from './TodoListUI'
+import TodoListUI from './TodoListUI';
+import {connect} from 'react-redux';
 
 class TodoList extends Component {
     constructor(props) {
@@ -13,8 +12,7 @@ class TodoList extends Component {
         //console.log('store.getState', store.getState());
         store.subscribe(this.storeChange);//订阅Redux的状态
     }
-    //不用插件时, 只能在componentDidMount中发post, 数据通过redux传入到store中, 不完美
-    //如果有中间件, 可以写到中间件中
+
 
     render() {
         //console.log("123123123", store.getState(), "state", this.state);
@@ -30,31 +28,7 @@ class TodoList extends Component {
                         list={this.state.list}
                         delItem={this.delItem}
                     />
-                    {/*<Input
-                        placeholder="Write something"
-                        style={{width: '250px', margin: '20px 50px'}}
-                        onChange={this.changeInputValue}
-                        value={this.state.inputValue}
-                    />
-                    <Button
-                        type="primary"
-                        onClick={() => this.btnAdd()}
-                    >
-                        增加
-                    </Button>*/}
                 </div>
-                    {/*<div style={{width: "300px"}}>
-                        <List
-                            bordered
-                            dataSource={this.state.list}
-                            renderItem={(item, index) => (<List.Item onClick={() => {
-                                this.delItem(index)
-                            }}>{item}</List.Item>)}
-                            // renderItem={item=>(<List.Item>{item}</List.Item>)}
-                        />
-
-                    </div>*/}
-
             </div>
         );
     }
@@ -81,5 +55,10 @@ class TodoList extends Component {
     }
 
 }
+const stateToProps = (state) =>{
+    return {
+        inputValue: state.inputValue
+    }
+}
 
-export default TodoList;
+export default connect(stateToProps,null)(TodoList);

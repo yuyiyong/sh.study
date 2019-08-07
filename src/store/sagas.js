@@ -1,22 +1,20 @@
-import {takeEvery} from 'redux-saga/effects';//监听
-
+import {takeEvery,put} from 'redux-saga/effects';//takeEvery监听
+import {LOGIN_SAGA} from "./actionType";
+import {require} from "../utils/commentUtils";
+import {loginAcion} from './actionCreators'
 //generator函数
-function* mySaga() {
+function* mySaga() {        //入口函数
     //业务逻辑可以写这边
-    //yield takeEvery(GET_MY_LIST,getList)
+    yield takeEvery(LOGIN_SAGA,getLogin);
 }
-function* getList() {
-    console.log("jspang");//测试上面的是否能执行
-    //axios.get('.........').then((res)=>{
-    //      const data = res.data;
-    //       const action = getListAction(data)
-    //      put (action)//不用dispatch了.
-    // })
+function *getLogin(action1) {
+    //console.log("values",values);
+    const res = yield require("/thirdpay/customeradmin/login",{
+        method:"POST",
+        body:action1.payload
+    });
+    const action =loginAcion(res);
+    yield put(action)
+}
 
-    //////////////////////
-    //和上面一样的效果
-    // const res = yield axios.get().then();
-    // const action = getListAcion(res.data)
-    // yield  put(action)
-}
 export default mySaga;

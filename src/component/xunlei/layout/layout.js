@@ -27,7 +27,7 @@ class Layout extends Component {
 
     handleScroll = () => {
         const changeY = window.scrollY;
-        console.log("changeY", changeY);
+        //console.log("changeY", changeY);
         if (changeY >= 535) {
             this.setState({
                 position: 'fixed',
@@ -83,7 +83,7 @@ const arr = [
     {title: '首页', url: '/'},
     {title: 'todo列表', url: '/todoList'},
     {title: 'list', url: '/list/1231231'},
-    {title: '登录Demo', url: '/login/'},
+    {title: '登录Demo-redux应用', url: '/login/'},
     {
         title: '新手引导', child: [
             {title: '免费注册', url: '/user/register?key=1'},

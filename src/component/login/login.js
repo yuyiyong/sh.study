@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 import "antd/dist/antd.css"
-import {Form, Icon, Input, Button,} from 'antd';
-import styles from './setting/login.less'
+import {Button, Form, Icon, Input,} from 'antd';
+import styles from './setting/login.less';
+import fetch from 'cross-fetch'
+import {require} from "../../utils/commentUtils";
+import store from "../../store";
+import {loginAcion,getLoginAcion,getLoginSagaAcion} from "../../store/actionCreators";
+
 
 /*import {connect} from 'dva';
 @connect(({})=>({
@@ -12,20 +17,41 @@ class Login extends Component {
     constructor(props) {
         super(props);
     }
+
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
+
+                /* const res = require('/thirdpay/customeradmin/login', {
+                     method: "POST",
+                     body: {
+                         mobile: "string",
+                         pwd: "string"
+                     }
+                 }).then((res) => {
+                     console.log("res___", res);
+                     let action = loginAcion(res);
+                     store.dispatch(action)
+                 });*/
+               /* //thunk把上面的一段给解决掉
+                const action = getLoginAcion(values);
+                store.dispatch(action);*/
+               const action = getLoginSagaAcion(values);
+               store.dispatch(action);
             }
         });
     };
+
+
     render() {
-       // const { getFieldDecorator } = this.props.form;
+        const {getFieldDecorator} = this.props.form;
+        console.log("getstore", store.getState());
         return (
             <div>
                 <div className={styles.layout}>
-                     <Input
+                    {/* <Input
                         className={styles.name}
                         size='large'
                         placeholder='用户名'
@@ -40,20 +66,20 @@ class Login extends Component {
                         type='primary'
                         size='large'
                         className={styles.loginBtn}
-                    >登录</Button>
-                   {/* <Form onSubmit={this.handleSubmit} className="login-form">
+                    >登录</Button>*/}
+                    <Form onSubmit={this.handleSubmit} className="login-form">
                         <Form.Item>
-                            {getFieldDecorator('username', {
-                                rules: [{required: true, message: 'Please input your username!'}],
+                            {getFieldDecorator('mobile', {
+                                rules: [{required: true, message: 'Please input your mobile!'}],
                             })(
                                 <Input
                                     prefix={<Icon type="user" style={{color: 'rgba(0,0,0,.25)'}}/>}
-                                    placeholder="Username"
+                                    placeholder="mobile"
                                 />,
                             )}
                         </Form.Item>
                         <Form.Item>
-                            {getFieldDecorator('password', {
+                            {getFieldDecorator('pwd', {
                                 rules: [{required: true, message: 'Please input your Password!'}],
                             })(
                                 <Input
@@ -64,16 +90,18 @@ class Login extends Component {
                             )}
                         </Form.Item>
                         <Form.Item>
-                            <Button type="primary" htmlType="submit" className="login-form-button">
+                            <Button type="primary" htmlType="submit" className={styles.loginBtn}>
                                 Log in
                             </Button>
-                            Or <a href="">register now!</a>
                         </Form.Item>
-                    </Form>*/}
+                    </Form>
+                    <h3>{store.getState().data.message}</h3>
                 </div>
             </div>
         )
     }
 }
 
-export default Login;
+const Login1 = Form.create()(Login);
+
+export default Login1;
