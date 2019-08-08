@@ -1,4 +1,4 @@
-import {ADD_ITEM, CHANGE_INPUT, DEL_ITEM, LOGIN} from './actionType'
+import {ADD_ITEM, CHANGE_INPUT, DEL_ITEM, LOGIN, R_CHANGE_INPUT,TEXT_INPUT_CHANGE} from './actionType'
 
 const defaultState = {
     list: [
@@ -6,6 +6,8 @@ const defaultState = {
         '早9点和项目经理作开发需求讨论会',
         '晚5:30对今日代码进行review'],
     data:{},
+    inputValue :'',
+    textValue:'',
 };
 
 
@@ -32,6 +34,17 @@ export default (state = defaultState, action) => {
         newState.data={
             ...action.payload
         };
+        return newState;
+    }
+    //dispatch 函数里面的action
+    if(action.type ===R_CHANGE_INPUT){
+        let newState = JSON.parse(JSON.stringify(state));
+        newState.inputValue=action.value;
+        return newState;
+    }
+    if(action.type ===TEXT_INPUT_CHANGE){
+        let newState = JSON.parse(JSON.stringify(state));
+        newState.textValue = action.value;
         return newState;
     }
     //console.log("121231231231",state);

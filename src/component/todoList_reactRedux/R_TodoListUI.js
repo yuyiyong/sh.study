@@ -2,16 +2,14 @@ import "antd/dist/antd.css"
 import {Button, Input, List} from "antd";
 import React from 'react';
 
-const TodoListUI = (props) => {
+ const R_TodoListUI = (props) => {
     return (
         <div>
             <div>
                 <Input
                     placeholder="Write something"
                     style={{width: '250px', margin: '20px 50px'}}
-                    onChange={(e) => {
-                        props.changeInputValue(e)
-                    }}
+                    onChange={(e)=>{props.changeInputValue(e)}}
                     value={props.inputValue}
                 />
                 <Button
@@ -26,13 +24,11 @@ const TodoListUI = (props) => {
                     bordered
                     dataSource={props.list}
                     renderItem={(item, index) => (<List.Item
-                        onClick={() => {
-                            props.delItem(index)
-                        }}
+                        onClick={() => {props.delItem(index)}}
                     >{item}</List.Item>)}
                 />
             </div>
         </div>
     )
 };
-export default TodoListUI;
+export default R_TodoListUI;

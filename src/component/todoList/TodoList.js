@@ -2,20 +2,17 @@ import React, {Component} from 'react';
 import store from "../../store";
 import {addItemAction, changeInputAction, delItemAction} from "../../store/actionCreators";
 import TodoListUI from './TodoListUI';
-import {connect} from 'react-redux';
 
 class TodoList extends Component {
     constructor(props) {
         super(props);
         this.state = store.getState();
         this.storeChange = this.storeChange.bind(this);//转变this指向
-        //console.log('store.getState', store.getState());
         store.subscribe(this.storeChange);//订阅Redux的状态
     }
 
 
     render() {
-        //console.log("123123123", store.getState(), "state", this.state);
         console.log(store.getState());
         return (
             <div>
@@ -55,10 +52,6 @@ class TodoList extends Component {
     }
 
 }
-const stateToProps = (state) =>{
-    return {
-        inputValue: state.inputValue
-    }
-}
 
-export default connect(stateToProps,null)(TodoList);
+
+export default TodoList;
