@@ -8,7 +8,6 @@ const Css3  = () => {
     <div>
         <Css3Layout>
             <Route path="/css3/day1" component={Day1}/>
-
         </Css3Layout>
     </div>
   )
