@@ -2,17 +2,9 @@ import React, {Component} from 'react';
 import "antd/dist/antd.css"
 import {Button, Form, Icon, Input,} from 'antd';
 import styles from './setting/login.less';
-import fetch from 'cross-fetch'
-import {require} from "../../utils/commentUtils";
 import store from "../../store";
-import {loginAcion,getLoginAcion,getLoginSagaAcion} from "../../store/actionCreators";
-
-
-/*import {connect} from 'dva';
-@connect(({})=>({
-loading:loading.effects[''],
-}))*/
-
+import {getLoginSagaAcion} from "../../store/actionCreators";
+import {connect} from 'react-redux';
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -35,11 +27,11 @@ class Login extends Component {
                      let action = loginAcion(res);
                      store.dispatch(action)
                  });*/
-               /* //thunk把上面的一段给解决掉
-                const action = getLoginAcion(values);
-                store.dispatch(action);*/
-               const action = getLoginSagaAcion(values);
-               store.dispatch(action);
+                /* //thunk把上面的一段给解决掉
+                 const action = getLoginAcion(values);
+                 store.dispatch(action);*/
+                const action = getLoginSagaAcion(values);
+                store.dispatch(action);
             }
         });
     };
@@ -51,22 +43,6 @@ class Login extends Component {
         return (
             <div>
                 <div className={styles.layout}>
-                    {/* <Input
-                        className={styles.name}
-                        size='large'
-                        placeholder='用户名'
-                    />
-                    <Input
-                        className={styles.pwd}
-                        size='large'
-                        placeholder='密码'
-                        type='password'
-                    />
-                    <Button
-                        type='primary'
-                        size='large'
-                        className={styles.loginBtn}
-                    >登录</Button>*/}
                     <Form onSubmit={this.handleSubmit} className="login-form">
                         <Form.Item>
                             {getFieldDecorator('mobile', {
@@ -95,7 +71,7 @@ class Login extends Component {
                             </Button>
                         </Form.Item>
                     </Form>
-                    <h3>{store.getState().data.message}</h3>
+                    <h3>{this.props.data.message}</h3>
                 </div>
             </div>
         )
@@ -103,5 +79,9 @@ class Login extends Component {
 }
 
 const Login1 = Form.create()(Login);
-
-export default Login1;
+const stateToProps = (state) => {
+    return{
+        data:state.data
+    }
+}
+export default connect(stateToProps,null)(Login1)

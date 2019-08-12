@@ -29,6 +29,7 @@ class AboutUs extends Component {
               <a
                 onClick={() => this.onhandleLeft()}
                 style={{opacity:opcityL}}
+                href="javascript:;"
               >left</a>
             </div>
             <div className={styles.center}>
@@ -69,6 +70,7 @@ class AboutUs extends Component {
               <a
                 onClick={()=>this.handleRight()}
                 style={{opacity:opcityR}}
+                href="javascript:;"
               >right</a>
             </div>
 

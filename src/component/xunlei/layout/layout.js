@@ -4,10 +4,6 @@ import MyMenu from '../MyMenu';
 //import curConfig from "@/curConfig";
 import React, {Component} from 'react';
 
-/*import {connect} from 'dva';
-@connect(({})=>({
-loading:loading.effects[''],
-}))*/
 class Layout extends Component {
     constructor(props) {
         super(props);
@@ -82,8 +78,10 @@ class Layout extends Component {
 const arr = [
     {title: '首页', url: '/'},
     {title: 'todo列表', url: '/todoList'},
-    {title: 'list', url: '/list/1231231'},
+    {title: 'Router例子', url: '/router/1231231'},
     {title: '登录Demo-redux应用', url: '/login/'},
+    {title: 'ReactRedux-TodoList', url: '/todoList-ReactRedux/'},
+    {title: "css3学习",url: '/css3'},
     {
         title: '新手引导', child: [
             {title: '免费注册', url: '/user/register?key=1'},

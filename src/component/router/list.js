@@ -34,7 +34,7 @@ class List extends Component {
                 <ul>
                     {this.state.list.map((item, key) => {
                         return (
-                            <li key={'a' + key}><Link to={'/list/' + item.uid}>{item.title}</Link></li>
+                            <li key={'a' + key}><Link to={'/router/' + item.uid+'/list'}>{item.title}</Link></li>
                         )
                     })}
                 </ul>
