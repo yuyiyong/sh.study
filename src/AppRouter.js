@@ -9,6 +9,7 @@ import store from "./store";
 import R_TodoList from './component/todoList_reactRedux/R_TodoList'
 import PrimaryNav from "./component/router/primaryNav";
 import Css3 from "./component/css3/css3"
+
 const R_TodoListApp = () => <Provider store={store}><R_TodoList/></Provider>;
 const LoginApp = () => <Provider store={store}><Login/></Provider>;
 
@@ -17,6 +18,7 @@ function AppRouter() {
         <Router>
             <Layout>
                 <Route path="/" exact component={Index}/>
+
                 <Route path="/todoList/" component={TodoList}/>
                 <Route path="/router/:id" component={PrimaryNav}/>
                 <Route path="/login" component={LoginApp}/>

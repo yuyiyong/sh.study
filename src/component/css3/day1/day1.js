@@ -85,6 +85,25 @@ const Day1 = () => {
 
                 </Col>
             </Row>
+            <Row>
+                <Col span={8}>
+
+                    <div className={styles.sixBian}></div>
+                    <div className={styles.heart}></div>
+                    <div className={styles.egg}></div>
+                    <div className={styles.taiji}></div>
+                </Col>
+                <Col span={8} className={styles.globCol}>
+                    <div className={styles.bgFont}>
+                        <p>可是那两根琴弦，却在半途中被另一道更锐利的银光截断了，紧绷之势骤松，断弦垂到了地上。
+                            截断它的，也是琴弦！
+                            断弦震颤之势割伤了金光瑶的手心，他旋即松手，而蓝忘机也恰好在此时撤袖，面不改色地收回了琴弦。
+                            窃技之徒偷师到的弦杀术，毕竟不如正统精习的弦杀术快且狠。
+                            一口气也没喘，金光瑶随即挥出第三根琴弦。这次的目标是距离蓝忘机较远的聂怀桑，好让蓝忘机来不及施救。可是，这一着也落空了。一声清脆的玉石与金石砰击之响，蓝曦臣持着裂冰，挡在聂怀桑身前。
+                        </p>
+                    </div>
+                </Col>
+            </Row>
         </div>
     )
 };
