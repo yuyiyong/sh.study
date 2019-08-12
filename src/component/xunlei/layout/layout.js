@@ -48,7 +48,7 @@ class Layout extends Component {
                         {/*<img src={require('../../../../../assets/home/bolezhifu-z.png')} alt=""/>*/}
                     </div>
                     <MyMenu
-                        arr={arr}
+                        arr={this.props.arr}
                     />
                 </div>
                 <div className={[styles.contenter, this.props.classname].join(' ')}>
@@ -75,26 +75,5 @@ class Layout extends Component {
      }*/
 }
 
-const arr = [
-    {title: '首页', url: '/'},
-    {title: 'todo列表', url: '/todoList'},
-    {title: 'Router例子', url: '/router/1231231'},
-    {title: '登录Demo-redux应用', url: '/login/'},
-    {title: 'ReactRedux-TodoList', url: '/todoList-ReactRedux/'},
-    {title: "css3学习",url: '/css3'},
-    {
-        title: '新手引导', child: [
-            {title: '免费注册', url: '/user/register?key=1'},
-            {title: 'Api文档轻松接入', AUrl: ' curConfig.docPath'}
-        ]
-    },
-    {title: '开发者中心', AUrl: 'curConfig.docPath'},
-    {
-        title: '帮助中心', child: [
-            {title: '接入常见问题', url: ''},
-            {title: '使用过程中常见问题', url: ''}
-        ]
-    },
-    {title: '关于我们', url: '/front/about?key=4'},
-];
+
 export default Layout;
