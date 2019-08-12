@@ -17,7 +17,7 @@ const Day1 = () => {
                 <Col span={8}>
                     <div className={styles.aB}>
 
-                        <a href="">变色a标签</a>
+                        <a href="">变色aa标签</a>
                     </div>
                 </Col>
                 <Col span={8}>
