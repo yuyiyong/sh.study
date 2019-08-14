@@ -1,0 +1,20 @@
+.move{
+  width: 100px;
+  height: 100px;
+  background: skyblue;
+  position: fixed;
+  animation: myMove 5s infinite;//infinite 一直循环
+  //animation-iteration-count: 3;//循环3次
+}
+
+@keyframes myMove {
+  //方法一
+  /*from {top:0;left: 20%;}
+  to {top:0;left: 80%}*/
+  //方法二
+  0% {top:10%; left: 20%}
+  25% {top:10%; left: 80%;background-color: yellowgreen}
+  50% {top:80%; left: 80%}
+  75% {top:80%; left: 20%}
+  100% {top:10%; left: 20%;background-color: skyblue}
+}
