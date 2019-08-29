@@ -1,16 +1,16 @@
 import React from 'react';
-import ShowArea from "./showArea";
-import Buttons from "./Buttons";
-import {Colors} from "./colors";
+import Area from "./area";
+import ColorManege from "./colorManege";
+import Butonss from "./buttons";
 
-const UseReducers = () => {
+const UseReducerss = () => {
     return (
         <div>
-            <Colors>
-                <ShowArea/>
-                <Buttons/>
-            </Colors>
+            <ColorManege>
+                <Area/>
+                <Butonss/>
+            </ColorManege>
         </div>
     )
 };
-export default UseReducers;
+export default UseReducerss;
