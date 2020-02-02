@@ -11,6 +11,7 @@ import PrimaryNav from "./component/router/primaryNav";
 import Css3 from "./component/css3/css3"
 import Hooks from "./hooks/hocks";
 import ReactAdvance from "./component/reactAdvanced/reactAdvance";
+import OtherTechnoligy from "./component/otherTechnoligy/OtherTechnoligy";
 
 const R_TodoListApp = () => <Provider store={store}><R_TodoList/></Provider>;
 const LoginApp = () => <Provider store={store}><Login/></Provider>;
@@ -29,6 +30,7 @@ function AppRouter() {
                 <Route path="/css3" component={Css3}/>
                 <Route path="/hooks" component={Hooks}/>
                 <Route path="/reaxtAdvance" component={ReactAdvance}/>
+                <Route path="/otherTechnology" component={OtherTechnoligy}/>
             </Layout>
         </Router>
     );
@@ -43,7 +45,9 @@ const arr = [
     {title: "css3学习", url: '/css3'},
     {title: "hooks", url: '/hooks'},
     {title: "reaxtAdvance", url: '/reaxtAdvance'},
-    {
+    {title: "其他技术", url: '/otherTechnology'},
+
+    /*{
         title: '新手引导', child: [
             {title: '免费注册', url: '/user/register?key=1'},
             {title: 'Api文档轻松接入', AUrl: ' curConfig.docPath'}
@@ -56,7 +60,7 @@ const arr = [
             {title: '使用过程中常见问题', url: ''}
         ]
     },
-    {title: '关于我们', url: '/front/about?key=4'},
+    {title: '关于我们', url: '/front/about?key=4'},*/
 ];
 
 export default AppRouter;

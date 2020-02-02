@@ -1,3 +1,4 @@
+// import fetch from "cross-fetch";
 export const require = (url, option) => {
     if (option === undefined) {
         option = {
