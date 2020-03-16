@@ -1,3 +1,4 @@
+/*
 import React, {useContext} from 'react';
 import {ColorContext, UPDATA_COLOR, UPDATA_NAME} from './colorManege';
 
@@ -10,7 +11,7 @@ const Butonss = () => {
                 onClick={() => {
                     dispatch({
                         type: UPDATA_COLOR,
-                        color: 'red',
+                        value: {color: 'red'},
                     })
                 }}
             >红色
@@ -19,22 +20,59 @@ const Butonss = () => {
                 onClick={() => {
                     dispatch({
                         type: UPDATA_COLOR,
-                        color: 'yellow'
+                        value: {color: 'yellow'}
                     })
                 }}
             >黄色
             </button>
             <button
                 onClick={() => {
-                    dispatch1({
+                    dispatch({
                         type: UPDATA_NAME,
-                        name: 'fjj',
+                        value: {name: 'fjj'},
                     })
                 }}
-            >
-                显示名字
-            </button>
-        </div>
+                    >
+                    显示名字
+                    </button>
+                    </div>
+                    )
+                    };
+                    export default Butonss;
+*/
+import React,{useContext} from 'react';
+import {ColorContext, UPDATA_COLOR, UPDATA_NAME} from "./colorManege";
+
+const Butonss = () => {
+
+    const {value,dispatch} = useContext(ColorContext);
+    return (
+        <>
+        <button onClick={()=> {
+            dispatch({
+                type:UPDATA_COLOR,
+                value:{
+                    color:'red'
+                }
+            })
+        }}>红色</button>
+        <button onClick={()=> {
+            dispatch({
+                type: UPDATA_COLOR,
+                value:{
+                    color:'yellow'
+                }
+            })
+        }}>黄色</button>
+        <button onClick={()=> {
+            dispatch({
+                type:UPDATA_NAME,
+                value:{
+                    name:'gaizi'
+                }
+            })
+        }}>名字</button>
+        </>
     )
 };
 export default Butonss;
